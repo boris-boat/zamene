@@ -1,0 +1,11 @@
+<form [formGroup]="forma">
+  <label for="username">Username</label>
+  <input type="text" formControlName="username" />
+  <label for="username">Password</label>
+  <input type="password" formControlName="password" />
+  <label for="username">Full Name</label>
+  <input type="text" formControlName="fullname" />
+  <label for="username">Telefon</label>
+  <input type="text" formControlName="phoneNumber" />
+  <button (click)="addUser()">Dodaj korisnika</button>
+</form>

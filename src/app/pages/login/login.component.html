@@ -1,0 +1,7 @@
+<form [formGroup]="forma">
+  <label for="username">Username</label>
+  <input type="text" formControlName="username" />
+  <label for="username">Password</label>
+  <input type="password" formControlName="password" />
+  <button class="btn btn-primary" (click)="onLogin()">Login</button>
+</form>

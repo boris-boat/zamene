@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <form [formGroup]="forma">
+      <div class="row-6">
+        <label for="name">Naziv</label>
+        <input type="text" formControlName="name" />
+      </div>
+      <div class="row-6">
+        <label for="name">Kratak opis</label>
+        <input type="text" formControlName="shortDescription" />
+      </div>
+      <div class="row-6">
+        <label for="name">Detaljan opis</label>
+        <input type="text" formControlName="longDescription" />
+      </div>
+      <div class="row-6">
+        <label for="name">Cena</label>
+        <input type="text" formControlName="price" />
+      </div>
+      <div class="row-6">
+        <label for="name">Moze zamena :</label>
+        <input type="checkbox" formControlName="swap" />
+      </div>
+      <div class="row-6">
+        <label for="name">Slika</label>
+        <input
+          (change)="fileChanged($event)"
+          type="file"
+          formControlName="file"
+        />
+      </div>
+    </form>
+    <div class="row-6">
+      <button class="btn btn-danger" (click)="addAdd()">Add</button>
+    </div>
+  </div>
+</div>

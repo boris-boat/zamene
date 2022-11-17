@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div
+    class="row justify-content-center align-items-center"
+    style="height: 70vh"
+  >
+    <div class="col-5 text-center">
+      <img src="{{ activeItem!.img }}" alt="" />
+      <div class="card" id="singleItem">
+        <h5 class="card-title">{{ activeItem!.createdBy }}</h5>
+        <div class="card-body">
+          {{ activeItem!.longDescription }} {{ activeItem!.price }}
+          {{ activeItem!.swap ? "Moze zamena" : "" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
