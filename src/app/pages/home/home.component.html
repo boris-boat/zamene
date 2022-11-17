@@ -8,13 +8,23 @@
         <div class="row mb-5 text-center">
           <h1>{{ activeUser.username }}</h1>
         </div>
-        <div class="row-5 justify-content-around d-flex mt-4">
-          <button [routerLink]="['/add']">Dodaj novi oglas</button>
-          <button [routerLink]="['/adds']">Pregledaj oglase</button>
-          <button [routerLink]="['/ownadds']">Pregledaj svoje oglase</button>
-          <ng-container *ngIf="activeUser.type === 'admin'">
-            <button (click)="createUser()">Dodaj korisnike</button>
-          </ng-container>
+        <div class="row">
+          <div class="col justify-content-around d-flex mt-4 card">
+            <button class="btn btn-light m-3" [routerLink]="['/add']">
+              Dodaj novi oglas
+            </button>
+            <button class="btn btn-light m-3" [routerLink]="['/adds']">
+              Pregledaj oglase
+            </button>
+            <button class="btn btn-light m-3" [routerLink]="['/ownadds']">
+              Pregledaj svoje oglase
+            </button>
+            <ng-container *ngIf="activeUser.type === 'admin'">
+              <button class="btn btn-light m-3" (click)="createUser()">
+                Dodaj korisnike
+              </button>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>

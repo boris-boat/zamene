@@ -34,6 +34,7 @@ export class AddComponent implements OnInit {
     item.createdBy = this.userService.activeUser().fullname
     console.log(item)
     this.itemService.addAdd(formData, item)
+    alert("Oglas uspesno dodat")
     this.forma.reset()
     this.router.navigate(['/home'])
   }

@@ -23,10 +23,9 @@ export class OwnaddsComponent implements OnInit {
   deleteAdd(data: any) {
     this.itemService.delete(data._id, this.user).subscribe({
       next: (res: any) => {
-        console.log(res)
+        this.user.items = res.items
       }
     })
-    this.user.items = data.items
 
   }
 }

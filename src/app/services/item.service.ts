@@ -35,7 +35,6 @@ export class ItemService {
     //  this.nextId = Math.max(...this.items.map(item => item.id)) + 1
   }
   delete(id: any, user: User) {
-    console.log(id)
     let data = { id: id, user: user }
     return this.http.post(this.url + "zamene/deleteAdd", data)
   }

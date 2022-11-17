@@ -1,7 +1,27 @@
-<form [formGroup]="forma">
-  <label for="username">Username</label>
-  <input type="text" formControlName="username" />
-  <label for="username">Password</label>
-  <input type="password" formControlName="password" />
-  <button class="btn btn-primary" (click)="onLogin()">Login</button>
-</form>
+<div
+  class="contianer d-flex align-items-center justify-content-center flex-column"
+  style="width: 100%; height: 100vh"
+>
+  <div class="mb-5">
+    <h1>ZAMENE</h1>
+  </div>
+  <div class="row" id="forma">
+    <div class="col">
+      <form [formGroup]="forma">
+        <div class="row mt-3">
+          <label for="username">Username</label>
+          <input type="text" formControlName="username" />
+        </div>
+        <div class="row mt-3">
+          <label for="username">Password</label>
+          <input type="password" formControlName="password" />
+        </div>
+        <div class="row mt-3">
+          <div class="col d-flex align-items-center justify-content-center">
+            <button class="btn btn-primary" (click)="onLogin()">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

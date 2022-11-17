@@ -1,37 +1,55 @@
-<div class="container-fluid">
-  <div class="row">
-    <form [formGroup]="forma">
-      <div class="row-6">
-        <label for="name">Naziv</label>
-        <input type="text" formControlName="name" />
+<div
+  class="container-fluid d-flex justify-content-center align-items-center"
+  style="height: 90vh"
+>
+  <div class="row card">
+    <form
+      [formGroup]="forma"
+      class="d-flex justify-content-center align-items-center flex-column"
+    >
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Naziv</label>
+          <input type="text" formControlName="name" />
+        </div>
       </div>
-      <div class="row-6">
-        <label for="name">Kratak opis</label>
-        <input type="text" formControlName="shortDescription" />
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Kratak opis</label>
+          <input type="text" formControlName="shortDescription" />
+        </div>
       </div>
-      <div class="row-6">
-        <label for="name">Detaljan opis</label>
-        <input type="text" formControlName="longDescription" />
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Detaljan opis</label>
+          <textarea type="text" formControlName="longDescription"></textarea>
+        </div>
       </div>
-      <div class="row-6">
-        <label for="name">Cena</label>
-        <input type="text" formControlName="price" />
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Cena</label>
+          <input type="text" formControlName="price" />
+        </div>
       </div>
-      <div class="row-6">
-        <label for="name">Moze zamena :</label>
-        <input type="checkbox" formControlName="swap" />
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Moze zamena :</label>
+          <input type="checkbox" formControlName="swap" />
+        </div>
       </div>
-      <div class="row-6">
-        <label for="name">Slika</label>
-        <input
-          (change)="fileChanged($event)"
-          type="file"
-          formControlName="file"
-        />
+      <div class="row m-4" style="width: 100%">
+        <div class="col p-0 d-flex justify-content-center align-items-center">
+          <label for="name">Slika</label>
+          <input
+            (change)="fileChanged($event)"
+            type="file"
+            formControlName="file"
+          />
+        </div>
       </div>
     </form>
-    <div class="row-6">
-      <button class="btn btn-danger" (click)="addAdd()">Add</button>
+    <div class="row-6 d-flex justify-content-center align-items-center mb-4">
+      <button class="btn btn-primary" (click)="addAdd()">Add</button>
     </div>
   </div>
 </div>
