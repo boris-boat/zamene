@@ -5,6 +5,7 @@ export class Item {
     name: string;
     shortDescription: string;
     longDescription: string;
+    creatorPhoneNumber: string
     swap: boolean;
     price: number;
     img: File;
@@ -12,6 +13,7 @@ export class Item {
     constructor(obj?: any) {
         this._id = obj && obj._id || null;
         this.name = obj && obj.name || null;
+        this.creatorPhoneNumber = obj && obj.creatorPhoneNumber || null;
         this.img = obj && obj.img || null;
         this.swap = obj && obj.swap || false;
         this.createdBy = obj && obj.createdBy || null;

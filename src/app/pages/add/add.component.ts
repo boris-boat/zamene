@@ -32,7 +32,7 @@ export class AddComponent implements OnInit {
     formData.append("file", this.file)
     let item: Item = new Item(this.forma.value)
     item.createdBy = this.userService.activeUser().fullname
-    console.log(item)
+    item.creatorPhoneNumber = this.userService.activeUser().phoneNumber
     this.itemService.addAdd(formData, item)
     alert("Oglas uspesno dodat")
     this.forma.reset()

@@ -5,7 +5,7 @@ export class User {
     username: string;
     password: string;
     fullname: string;
-    phoneNumber: number;
+    phoneNumber: string;
     items: Item[];
     constructor(obj?: any) {
         this.id = obj && obj._id || null;

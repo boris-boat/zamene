@@ -14,7 +14,6 @@ export class OneAddComponent implements OnInit {
   activeItem: Item | null = null
   constructor(private itemService: ItemService, private userService: UserService, private route: ActivatedRoute, private router: Router) {
     this.id = this.route.snapshot.params["id"]
-    // this.activeItem = this.itemService.getOne(this.id)[0]
 
   }
 
@@ -22,11 +21,10 @@ export class OneAddComponent implements OnInit {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.itemService.getOne(this.id).subscribe({
       next: (res) => {
-        console.log(res)
         this.activeItem = new Item(res)
       }
     })
-
+    console.log(this.activeItem)
   }
 
 }
