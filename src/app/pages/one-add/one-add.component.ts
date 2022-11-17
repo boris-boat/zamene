@@ -24,7 +24,6 @@ export class OneAddComponent implements OnInit {
         this.activeItem = new Item(res)
       }
     })
-    console.log(this.activeItem)
   }
 
 }

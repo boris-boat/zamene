@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 export class AddComponent implements OnInit {
   file: any = null
   forma: FormGroup = new FormGroup({
-    name: new FormControl(""),
+    name: new FormControl("", Validators.required),
     shortDescription: new FormControl(""),
-    longDescription: new FormControl(""),
+    longDescription: new FormControl("", Validators.required),
     swap: new FormControl(""),
-    price: new FormControl(0),
-    file: new FormControl("")
+    price: new FormControl(0, Validators.required),
+    file: new FormControl("", Validators.required)
   })
   constructor(private itemService: ItemService, private router: Router, private userService: UserService) { }
 

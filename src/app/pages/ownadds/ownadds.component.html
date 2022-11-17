@@ -5,7 +5,6 @@
         <!-- user -->
         <div class="col">Korisnik : {{ item.createdBy }}</div>
         <div class="col">Naziv : {{ item.name }}</div>
-        <div class="col">Opis : {{ item.shortDescription }}</div>
         <div class="col">Cena : {{ item.price }}</div>
         <div class="col">
           <button class="btn btn-primary" [routerLink]="['/details', item._id]">

@@ -13,12 +13,12 @@
           <input type="text" formControlName="name" />
         </div>
       </div>
-      <div class="row m-4" style="width: 100%">
+      <!-- <div class="row m-4" style="width: 100%">
         <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Kratak opis</label>
           <input type="text" formControlName="shortDescription" />
         </div>
-      </div>
+      </div> -->
       <div class="row m-4" style="width: 100%">
         <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Detaljan opis</label>
@@ -49,7 +49,13 @@
       </div>
     </form>
     <div class="row-6 d-flex justify-content-center align-items-center mb-4">
-      <button class="btn btn-primary" (click)="addAdd()">Add</button>
+      <button
+        class="btn btn-primary"
+        (click)="addAdd()"
+        [disabled]="!this.forma.valid"
+      >
+        Add
+      </button>
     </div>
   </div>
 </div>
