@@ -1,11 +1,29 @@
-<form [formGroup]="forma">
-  <label for="username">Username</label>
-  <input type="text" formControlName="username" />
-  <label for="username">Password</label>
-  <input type="password" formControlName="password" />
-  <label for="username">Full Name</label>
-  <input type="text" formControlName="fullname" />
-  <label for="username">Telefon</label>
-  <input type="text" formControlName="phoneNumber" />
-  <button (click)="addUser()">Dodaj korisnika</button>
-</form>
+<div
+  class="row d-flex justify-content-center align-content-center"
+  style="height: 90vh"
+>
+  <div class="col-4">
+    <div class="card">
+      <form
+        [formGroup]="forma"
+        class="d-flex flex-column gap-3 justify-content-start align-content-center text-center mt-5"
+      >
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" />
+        <label for="username">Password</label>
+        <input type="password" formControlName="password" />
+        <label for="username">Full Name</label>
+        <input type="text" formControlName="fullname" />
+        <label for="username">Telefon</label>
+        <input type="text" formControlName="phoneNumber" />
+        <div class="row mb-5">
+          <div class="col d-flex justify-content-center align-content-center">
+            <button class="btn btn-primary" (click)="addUser()">
+              Dodaj korisnika
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -14,11 +15,21 @@ export class AdminComponent implements OnInit {
     fullname: new FormControl(""),
     phoneNumber: new FormControl(""),
   })
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    if (!this.userService.loginCheck()) this.router.navigate(['/'])
+    if (this.userService.activeUser().type != "admin") this.router.navigate(['/'])
   }
+
   addUser() {
-    this.userService.createUser(this.forma.value).subscribe({ next: (res => console.log(res)) })
+    this.userService.createUser(this.forma.value).subscribe({
+      next: ((res) => {
+        if (res) {
+          alert("Korisnik dodat")
+          this.forma.reset()
+        }
+      })
+    })
   }
 }

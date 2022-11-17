@@ -1,3 +1,12 @@
 #singleItem {
   height: 40vh;
 }
+.imgWrapper {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 40%;
+  }
+}

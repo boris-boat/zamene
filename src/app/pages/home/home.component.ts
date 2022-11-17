@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   }
   ngOnInit(): void {
-   // if (!this.userService.loginCheck()) this.router.navigate(['/'])
+    if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.userService.getAllUsers().subscribe(item => {
       this.users = item
     })

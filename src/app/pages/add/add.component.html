@@ -5,40 +5,40 @@
   <div class="row card">
     <form
       [formGroup]="forma"
-      class="d-flex justify-content-center align-items-center flex-column"
+      class="d-flex justify-content-start align-items-center flex-column"
     >
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Naziv</label>
           <input type="text" formControlName="name" />
         </div>
       </div>
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Kratak opis</label>
           <input type="text" formControlName="shortDescription" />
         </div>
       </div>
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Detaljan opis</label>
           <textarea type="text" formControlName="longDescription"></textarea>
         </div>
       </div>
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Cena</label>
           <input type="text" formControlName="price" />
         </div>
       </div>
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Moze zamena :</label>
           <input type="checkbox" formControlName="swap" />
         </div>
       </div>
       <div class="row m-4" style="width: 100%">
-        <div class="col p-0 d-flex justify-content-center align-items-center">
+        <div class="col p-0 d-flex justify-content-start align-items-center">
           <label for="name">Slika</label>
           <input
             (change)="fileChanged($event)"
