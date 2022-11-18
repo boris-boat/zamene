@@ -1,13 +1,21 @@
 #singleItem {
-  height: 40vh;
+  height: 60vh;
 }
 .imgWrapper {
-  height: 30vh;
+  height: 25vh;
+  margin-bottom: 15px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    width: 40%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  .singleImg {
+    width: 100%;
     height: 100%;
+    img {
+      width: 250px;
+      height: 100%;
+    }
   }
 }

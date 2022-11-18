@@ -6,13 +6,20 @@
         <div class="col">Korisnik : {{ item.createdBy }}</div>
         <div class="col">Naziv : {{ item.name }}</div>
         <div class="col">Cena : {{ item.price }}</div>
-        <div class="col">
-          <button class="btn btn-primary" [routerLink]="['/details', item._id]">
-            Detaljnije
-          </button>
-          <button class="btn btn-danger" (click)="deleteAdd(item)">
-            Izbrisi
-          </button>
+        <div class="row mt-2 d-flex align-items-around">
+          <div class="col">
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/details', item._id]"
+            >
+              Detaljnije
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-danger" (click)="deleteAdd(item)">
+              Izbrisi
+            </button>
+          </div>
         </div>
       </div>
     </div>

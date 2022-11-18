@@ -28,14 +28,13 @@ export class ItemService {
     let newItem: any = new Item(item)
     for (let key in newItem) {
       formData.append(key, newItem[key])
-
     }
-    // this.http.post("http://localhost:3001/zamene/createitem", fd).subscribe({ next: (res) => console.log(res) })
-    this.http.post(this.url + "zamene/createitem", fd).subscribe(item => this.userService.setActiveUser(new User(item)))
-    //  this.nextId = Math.max(...this.items.map(item => item.id)) + 1
+
+    return this.http.post(this.url + "zamene/createitem", fd)
   }
   delete(id: any, user: User) {
     let data = { id: id, user: user }
+
     return this.http.post(this.url + "zamene/deleteAdd", data)
   }
 }

@@ -25,5 +25,7 @@ export class OneAddComponent implements OnInit {
       }
     })
   }
-
+  viewImg(data: any) {
+    console.log(data.img)
+  }
 }
