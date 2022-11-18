@@ -19,3 +19,21 @@
     }
   }
 }
+@media screen and (max-width: 420px) {
+  .wholePage {
+    width: 100%;
+  }
+  .imgWrapper {
+    flex-wrap: wrap;
+    height: auto;
+    .singleImg {
+      margin: 10px;
+      width: 100%;
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 420px) {
+}

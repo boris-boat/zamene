@@ -3,14 +3,14 @@
     class="row justify-content-center align-items-center"
     style="height: 60vh"
   >
-    <div class="col-8 text-center">
+    <div class="col-lg-8 col-12 text-center">
       <div class="row imgWrapper">
         <div class="col singleImg" *ngFor="let item of activeItem!.images">
           <img src="{{ item }}" alt="" onClick="window.open(this.src)" />
         </div>
       </div>
       <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-10 col-lg-8 offset-lg-2 offset-1">
           <div
             class="card d-flex align-items-center justify-content-around"
             id="singleItem"
