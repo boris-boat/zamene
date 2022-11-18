@@ -11,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addslist.component.scss']
 })
 export class AddslistComponent implements OnInit {
+  user: User
+
   allAdds: Item[] = []
   allUsers: User[] = []
-  constructor(private addsService: ItemService, private userService: UserService, private router: Router) { }
+  constructor(private itemService: ItemService, private userService: UserService, private router: Router) {
+    this.user = this.userService.activeUser()
+
+  }
   setAdds(data: Item[]) {
     this.allAdds = data
   }
@@ -27,5 +32,12 @@ export class AddslistComponent implements OnInit {
     })
 
   }
+  // deleteAdd(data: any) {
+  //   this.itemService.delete(data._id, this.user).subscribe({
+  //     next: (res: any) => {
+  //       console.log(res)
+  //     }
+  //   })
 
+  // }
 }

@@ -23,11 +23,12 @@ export class OwnaddsComponent implements OnInit {
   }
 
   deleteAdd(data: any) {
-    this.itemService.delete(data._id, this.user).subscribe({
-      next: (res: any) => {
-        this.user.items = res.items
-      }
-    })
+    if (confirm("Jeste li sigurni da zelite da izbrisete ovaj oglas?"))
+      this.itemService.delete(data._id, this.user).subscribe({
+        next: (res: any) => {
+          this.user.items = res.items
+        }
+      })
 
   }
 }
