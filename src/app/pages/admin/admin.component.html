@@ -41,7 +41,18 @@
       </div>
     </div>
   </div>
-  <div class="col-3">
-    <div class="card"></div>
+  <div class="col-3 card">
+    <div class="row" *ngFor="let user of allUsers">
+      <div class="card d-flex flex-row p-1">
+        <div class="col-10 d-flex align-items-center">
+          <p>{{ user.fullname }}</p>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-danger" (click)="deleteUser(user)">
+            Izbrisi
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

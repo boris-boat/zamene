@@ -33,9 +33,13 @@ export class AdminComponent implements OnInit {
         if (res) {
           alert("Korisnik dodat")
           this.forma.reset()
+          this.allUsers = []
+          this.allItems = []
+          this.getData()
         }
       })
     })
+
   }
   populateData() {
     for (let user of this.allUsers) {
@@ -52,13 +56,28 @@ export class AdminComponent implements OnInit {
 
   }
   deleteItem(item: any) {
-    let id = item.item._id
-    let user = item.user
-    this.itemService.delete(id, user).subscribe(() => {
-      alert("Oglas izbrisan")
-      this.allItems = []
-      this.getData()
+    if (confirm("Jeste li sigurni da zelite da izbrisete ovaj oglas?")) {
 
-    })
+      let id = item.item._id
+      let user = item.user
+      this.itemService.delete(id, user).subscribe(() => {
+        alert("Oglas izbrisan")
+        this.allItems = []
+        this.getData()
+
+      })
+    }
+
+  }
+  deleteUser(data: any) {
+    if (confirm("Jeste li sigurni da zelite da izbrisete ovog korisnika?"))
+      this.userService.deleteUser(data._id).subscribe((res) => {
+        let tmp = this.allUsers.filter((user) => user.username != data.username)
+        this.allUsers = tmp
+        this.allItems = []
+        this.getData()
+
+      })
+
   }
 }

@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  errorMsg: string = ""
   forma: FormGroup = new FormGroup({
     username: new FormControl(""),
     password: new FormControl(""),
@@ -21,6 +22,9 @@ export class LoginComponent implements OnInit {
 
   }
   onLogin() {
-    this.userService.login(this.forma.value)
+    console.log(!this.userService.login(this.forma.value))
+    if (!this.userService.login(this.forma.value)) {
+      this.errorMsg = "Neispravna kombinacija imena i šifre"
+    }
   }
 }

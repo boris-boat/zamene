@@ -34,6 +34,10 @@ export class UserService {
       this.loggedInUser = res
       this.isLoggedIn = true
       this.router.navigate(['/home'])
+      return
+    }
+    else {
+      return false
     }
   }
   logout() {
@@ -42,5 +46,9 @@ export class UserService {
   }
   createUser(data: User) {
     return this.http.post(this.url + "zamene/createuser", data)
+  }
+  deleteUser(data: string) {
+    let id = { id: data }
+    return this.http.post(this.url + "zamene/deleteUser", id, { responseType: "text" })
   }
 }
