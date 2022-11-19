@@ -33,7 +33,7 @@
       </div>
       <div class="row m-4" style="width: 100%">
         <div class="col p-0 d-flex justify-content-start align-items-center">
-          <label for="name">Moze zamena :</label>
+          <label for="name">Može zamena :</label>
           <input type="checkbox" formControlName="swap" />
         </div>
       </div>
@@ -44,29 +44,35 @@
         </div>
       </div>
       <div class="row w-100">
-        <div class="col-12 d-flex flex-column justify-content-start">
+        <div class="col-12 m-0 d-flex flex-column justify-content-start">
           <div class="row d-flex flex-nowrap">
-            <div class="col d-flex justify-content-between">
+            <div class="col-4">
               <button class="btn btn-light" (click)="uploadAndCompress(0)">
                 Slika 1
               </button>
-              <span>{{ files[0]?.name }}</span>
+            </div>
+            <div class="col-8 overflow-auto">
+              <p>{{ files[0]?.name }}</p>
             </div>
           </div>
           <div class="row d-flex flex-nowrap">
-            <div class="col d-flex justify-content-between">
+            <div class="col-4">
               <button class="btn btn-light" (click)="uploadAndCompress(1)">
                 Slika 2
               </button>
-              <span>{{ files[1]?.name }}</span>
+            </div>
+            <div class="col-8 overflow-auto">
+              <p>{{ files[1]?.name }}</p>
             </div>
           </div>
           <div class="row d-flex flex-nowrap">
-            <div class="col d-flex justify-content-between">
+            <div class="col-4">
               <button class="btn btn-light" (click)="uploadAndCompress(2)">
                 Slika 3
               </button>
-              <span>{{ files[2]?.name }}</span>
+            </div>
+            <div class="col-8 overflow-auto">
+              <p>{{ files[2]?.name }}</p>
             </div>
           </div>
           <!-- <div class="col p-0 d-flex justify-content-start align-items-center">
