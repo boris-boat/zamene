@@ -1,14 +1,18 @@
 <div class="container-fluid pt-5">
   <div class="row">
     <div class="col-lg-2 text-center mt-3" *ngFor="let item of allAdds">
-      <div class="card">
+      <div class="card" style="height: 200px">
         <!-- user -->
         <div class="col">Korisnik : {{ item.createdBy }}</div>
         <div class="col">Naziv : {{ item.name }}</div>
         <!-- <div class="col">Opis : {{ item.shortDescription }}</div> -->
-        <div class="col">Cena : {{ item.price }}</div>
-        <div class="col">Zamena : {{ item.swap ? "Da" : "Ne" }}</div>
-        <div class="col">Poklanjam : {{ item.gift ? "Da" : "Ne" }}</div>
+        <div class="col" *ngIf="item.price != 0">Cena : {{ item.price }}</div>
+        <div class="col" *ngIf="!item.gift">
+          Zamena : {{ item.swap ? "Da" : "Ne" }}
+        </div>
+        <div class="col" *ngIf="item.price == 0">
+          Poklanjam : {{ item.gift ? "Da" : "Ne" }}
+        </div>
         <div class="row">
           <div class="col m-3">
             <button
