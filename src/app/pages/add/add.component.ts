@@ -63,7 +63,6 @@ export class AddComponent implements OnInit {
   addAdd() {
     const formData = new FormData()
     for (let i = 0; i < this.files.length; i++) {
-      console.log(this.files[i])
       formData.append("files", this.files[i])
     }
     let item: Item = new Item(this.forma.value)

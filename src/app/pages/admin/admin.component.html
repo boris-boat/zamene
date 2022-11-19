@@ -2,33 +2,43 @@
   class="row d-flex justify-content-center align-content-center"
   style="height: 90vh"
 >
-  <div class="col-3">
-    <div class="card">
-      <form
-        [formGroup]="forma"
-        class="d-flex flex-column gap-3 justify-content-center align-items-center text-center mt-5"
-      >
-        <label for="username">Username</label>
-        <input type="text" formControlName="username" />
-        <label for="username">Password</label>
-        <input type="password" formControlName="password" />
-        <label for="username">Full Name</label>
-        <input type="text" formControlName="fullname" />
-        <label for="username">Telefon</label>
-        <input type="text" formControlName="phoneNumber" />
-        <div class="row mb-5">
-          <div class="col d-flex justify-content-center align-content-center">
-            <button class="btn btn-primary" (click)="addUser()">
-              Dodaj korisnika
-            </button>
-          </div>
+  <div class="col-3 card">
+    <form
+      [formGroup]="forma"
+      class="d-flex flex-column gap-3 justify-content-center align-items-center text-center mt-5"
+    >
+      <label for="username">Username</label>
+      <input type="text" formControlName="username" />
+      <label for="username">Password</label>
+      <input type="password" formControlName="password" />
+      <label for="username">Full Name</label>
+      <input type="text" formControlName="fullname" />
+      <label for="username">Telefon</label>
+      <input type="text" formControlName="phoneNumber" />
+      <div class="row mb-5">
+        <div class="col d-flex justify-content-center align-content-center">
+          <button class="btn btn-primary" (click)="addUser()">
+            Dodaj korisnika
+          </button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
-  <div class="col-3">
-    <div class="card">
-      <div class="row" *ngFor="let item of allItems">{{ item.name }}</div>
+  <div class="col-3 card">
+    <div class="row">
+      <div class="col-4 offset-4">Pregled predmeta</div>
+    </div>
+    <div class="row" *ngFor="let item of allItems">
+      <div class="card d-flex flex-row p-1">
+        <div class="col-10 d-flex align-items-center">
+          <p>{{ item.item.name }} od {{ item.user.username }}</p>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-danger" (click)="deleteItem(item)">
+            Izbrisi
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-3">

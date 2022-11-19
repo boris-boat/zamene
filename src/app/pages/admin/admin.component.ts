@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
   })
   constructor(private userService: UserService, private router: Router, private itemService: ItemService) { }
   allUsers: User[] = []
-  allItems: Item[] = []
+  allItems: any[] = []
   ngOnInit(): void {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     if (this.userService.activeUser().type != "admin") this.router.navigate(['/'])
@@ -39,10 +39,8 @@ export class AdminComponent implements OnInit {
   }
   populateData() {
     for (let user of this.allUsers) {
-      console.log(user)
       for (let item of user.items) {
-        console.log(item)
-        this.allItems.push(item)
+        this.allItems.push({ user: user, item: item })
       }
     }
   }
@@ -52,5 +50,15 @@ export class AdminComponent implements OnInit {
       this.populateData()
     })
 
+  }
+  deleteItem(item: any) {
+    let id = item.item._id
+    let user = item.user
+    this.itemService.delete(id, user).subscribe(() => {
+      alert("Oglas izbrisan")
+      this.allItems = []
+      this.getData()
+
+    })
   }
 }
