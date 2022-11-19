@@ -1,10 +1,11 @@
 #singleItem {
-  height: 60vh;
+  height: 50vh;
+  margin-top: 50px;
 }
 .imgWrapper {
   height: 25vh;
   margin-bottom: 15px;
-  margin-top: 15px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,9 +21,6 @@
   }
 }
 @media screen and (max-width: 420px) {
-  .wholePage {
-    width: 100%;
-  }
   .imgWrapper {
     flex-wrap: wrap;
     height: auto;
@@ -30,7 +28,8 @@
       margin: 10px;
       width: 100%;
       img {
-        width: 200px;
+        width: 300px;
+        height: 200px;
       }
     }
   }

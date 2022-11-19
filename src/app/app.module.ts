@@ -29,7 +29,7 @@ import { AdminComponent } from './pages/admin/admin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule, ReactiveFormsModule, HttpClientModule
+    NgbModule, ReactiveFormsModule, HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

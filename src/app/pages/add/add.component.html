@@ -43,27 +43,33 @@
           <input type="checkbox" formControlName="gift" />
         </div>
       </div>
-      <div class="row">
-        <div class="col d-flex flex-column">
-          <div class="col p-0 d-flex justify-content-start align-items-center">
-            <label for="name">Slika 1</label>
-            <input
-              (change)="fileChanged($event, 0)"
-              type="file"
-              formControlName="file"
-              enctype="multipart/form-data"
-            />
+      <div class="row w-100">
+        <div class="col-12 d-flex flex-column justify-content-start">
+          <div class="row d-flex flex-nowrap">
+            <div class="col d-flex justify-content-between">
+              <button class="btn btn-light" (click)="uploadAndCompress(0)">
+                Slika 1
+              </button>
+              <span>{{ files[0]?.name }}</span>
+            </div>
           </div>
-          <div class="col p-0 d-flex justify-content-start align-items-center">
-            <label for="name">Slika 2</label>
-            <input
-              (change)="fileChanged($event, 1)"
-              type="file"
-              formControlName="file2"
-              enctype="multipart/form-data"
-            />
+          <div class="row d-flex flex-nowrap">
+            <div class="col d-flex justify-content-between">
+              <button class="btn btn-light" (click)="uploadAndCompress(1)">
+                Slika 2
+              </button>
+              <span>{{ files[1]?.name }}</span>
+            </div>
           </div>
-          <div class="col p-0 d-flex justify-content-start align-items-center">
+          <div class="row d-flex flex-nowrap">
+            <div class="col d-flex justify-content-between">
+              <button class="btn btn-light" (click)="uploadAndCompress(2)">
+                Slika 3
+              </button>
+              <span>{{ files[2]?.name }}</span>
+            </div>
+          </div>
+          <!-- <div class="col p-0 d-flex justify-content-start align-items-center">
             <label for="name">Slika 3</label>
             <input
               (change)="fileChanged($event, 2)"
@@ -71,7 +77,7 @@
               formControlName="file3"
               enctype="multipart/form-data"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </form>

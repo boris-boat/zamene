@@ -1,3 +1,6 @@
+import { Item } from './../../models/item';
+import { User } from './../../models/user';
+import { ItemService } from './../../services/item.service';
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -15,11 +18,13 @@ export class AdminComponent implements OnInit {
     fullname: new FormControl(""),
     phoneNumber: new FormControl(""),
   })
-  constructor(private userService: UserService, private router: Router) { }
-
+  constructor(private userService: UserService, private router: Router, private itemService: ItemService) { }
+  allUsers: User[] = []
+  allItems: Item[] = []
   ngOnInit(): void {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     if (this.userService.activeUser().type != "admin") this.router.navigate(['/'])
+    this.getData()
   }
 
   addUser() {
@@ -31,5 +36,21 @@ export class AdminComponent implements OnInit {
         }
       })
     })
+  }
+  populateData() {
+    for (let user of this.allUsers) {
+      console.log(user)
+      for (let item of user.items) {
+        console.log(item)
+        this.allItems.push(item)
+      }
+    }
+  }
+  getData() {
+    this.userService.getAllUsers().subscribe(res => {
+      this.allUsers = res
+      this.populateData()
+    })
+
   }
 }

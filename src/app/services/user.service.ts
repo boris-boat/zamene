@@ -9,7 +9,7 @@ export class UserService {
   url: string = "https://podsetnik.herokuapp.com/"
   users: User[] = []
   loggedInUser: User = new User()
-  isLoggedIn: boolean = false
+  isLoggedIn: boolean = true
   //umesto isloggedin  staviti user objekt
   constructor(private router: Router, private http: HttpClient) {
     this.http.get<User[]>(this.url + "zamene/getallusers").subscribe(item => this.users = item.map(data => data))
