@@ -1,3 +1,4 @@
+import { SingleUserComponent } from './single-user/single-user.component';
 import { Item } from './../../models/item';
 import { User } from './../../models/user';
 import { ItemService } from './../../services/item.service';
@@ -5,6 +6,7 @@ import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-admin',
@@ -18,7 +20,7 @@ export class AdminComponent implements OnInit {
     fullname: new FormControl(""),
     phoneNumber: new FormControl(""),
   })
-  constructor(private userService: UserService, private router: Router, private itemService: ItemService) { }
+  constructor(private userService: UserService, private router: Router, private itemService: ItemService, private modalService: NgbModal) { }
   allUsers: User[] = []
   allItems: any[] = []
   ngOnInit(): void {
@@ -79,5 +81,10 @@ export class AdminComponent implements OnInit {
 
       })
 
+  }
+  openUserModal(user: User): void {
+    const modalRef = this.modalService.open(SingleUserComponent);
+
+    modalRef.componentInstance.user = user
   }
 }

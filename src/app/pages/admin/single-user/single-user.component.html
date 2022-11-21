@@ -1,0 +1,8 @@
+<div class="wrapper">
+  <p>Username : {{ user.username }}</p>
+  <p>Password : {{ user.password }}</p>
+  <p>Fullname : {{ user.fullname }}</p>
+  <p>Telefon : {{ user.phoneNumber }}</p>
+  <p>Oglasi :</p>
+  <p *ngFor="let item of user.items">{{ item.name }}</p>
+</div>

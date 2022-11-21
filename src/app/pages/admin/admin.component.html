@@ -24,11 +24,8 @@
       </div>
     </form>
   </div>
-  <div class="col-3 card">
-    <div class="row">
-      <div class="col-4 offset-4">Pregled predmeta</div>
-    </div>
-    <div class="row" *ngFor="let item of allItems">
+  <div class="col-3 card d-flex align-items-center">
+    <div class="row mt-2" style="width: 90%" *ngFor="let item of allItems">
       <div class="card d-flex flex-row p-1">
         <div class="col-10 d-flex align-items-center">
           <p>{{ item.item.name }} od {{ item.user.username }}</p>
@@ -41,11 +38,11 @@
       </div>
     </div>
   </div>
-  <div class="col-3 card">
-    <div class="row" *ngFor="let user of allUsers">
+  <div class="col-3 card d-flex align-items-center">
+    <div class="row mt-2" style="width: 90%" *ngFor="let user of allUsers">
       <div class="card d-flex flex-row p-1">
-        <div class="col-10 d-flex align-items-center">
-          <p>{{ user.fullname }}</p>
+        <div class="col-10 d-flex align-items-center eachUser">
+          <p (click)="openUserModal(user)">{{ user.fullname }}</p>
         </div>
         <div class="col-2">
           <button class="btn btn-danger" (click)="deleteUser(user)">

@@ -44,6 +44,8 @@ export class AddComponent implements OnInit {
   async uploadAndCompress(index: number) {
     const { image, orientation, fileName } = await this.imageCompress
       .uploadFile();
+    console.log(orientation)
+
     this.imageCompress
       .compressFile(image, orientation, 50, 50)
       .then((result_1: DataUrl) => {

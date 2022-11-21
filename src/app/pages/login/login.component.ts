@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
 
   }
   onLogin() {
-    console.log(!this.userService.login(this.forma.value))
     if (!this.userService.login(this.forma.value)) {
       this.errorMsg = "Neispravna kombinacija imena i šifre"
     }

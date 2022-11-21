@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OwnaddsComponent } from './pages/ownadds/ownadds.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { SingleUserComponent } from './pages/admin/single-user/single-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AdminComponent } from './pages/admin/admin.component';
     LoginComponent,
     OwnaddsComponent,
     AdminComponent,
+    SingleUserComponent,
   ],
   imports: [
     BrowserModule,
