@@ -1,3 +1,17 @@
 #homePage {
   height: 90vh;
 }
+.buttons {
+  width: 20%;
+}
+img {
+  width: 200px;
+}
+@media screen and (max-width: 420px) {
+  #homePage {
+    margin-top: -50px;
+  }
+  .buttons {
+    width: 90%;
+  }
+}

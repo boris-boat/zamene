@@ -6,16 +6,24 @@
     <div class="col-lg-2 text-center mt-3" *ngFor="let item of user.items">
       <div class="card">
         <!-- user -->
-        <div class="col">Korisnik : {{ item.createdBy }}</div>
-        <div class="col">Naziv : {{ item.name }}</div>
+        <div class="col">
+          <b>
+            {{ item.longDescription }}
+          </b>
+        </div>
         <div class="col">Cena : {{ item.price }}</div>
-        <div class="row mt-2 d-flex align-items-around mb-2">
+        <div class="row mt-2 d-flex mb-2 p-1">
           <div class="col">
             <button
               class="btn btn-primary"
               [routerLink]="['/details', item._id]"
             >
               Detaljnije
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-success" (click)="updateAdd(item)">
+              Izmeni
             </button>
           </div>
           <div class="col">

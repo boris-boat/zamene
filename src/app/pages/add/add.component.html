@@ -75,25 +75,25 @@
               <p>{{ files[2]?.name }}</p>
             </div>
           </div>
-          <!-- <div class="col p-0 d-flex justify-content-start align-items-center">
-            <label for="name">Slika 3</label>
-            <input
-              (change)="fileChanged($event, 2)"
-              type="file"
-              formControlName="file3"
-              enctype="multipart/form-data"
-            />
-          </div> -->
         </div>
       </div>
     </form>
     <div class="row-6 d-flex justify-content-center align-items-center mb-4">
       <button
+        *ngIf="currentUrl == '/ownadds'"
+        class="btn btn-primary"
+        (click)="editAdd()"
+        [disabled]="!this.forma.valid"
+      >
+        Izmeni
+      </button>
+      <button
+        *ngIf="currentUrl == '/add'"
         class="btn btn-primary"
         (click)="addAdd()"
         [disabled]="!this.forma.valid"
       >
-        Add
+        Dodaj
       </button>
     </div>
   </div>

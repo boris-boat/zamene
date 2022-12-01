@@ -1,33 +1,32 @@
 <ng-container *ngIf="isLoggedIn()">
   <div
-    class="container-fluid d-flex align-items-center justify-content-center"
+    class="container-fluid d-flex align-items-center justify-content-center flex-column"
     id="homePage"
   >
     <div class="row">
-      <div class="col">
-        <div class="row mb-5 text-center">
-          <div class="col-12">
-            <h1>Dobrodošao {{ activeUser.username }}</h1>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col justify-content-around d-flex mt-4 card">
-            <button class="btn btn-light m-3" [routerLink]="['/add']">
-              Dodaj novi oglas
-            </button>
-            <button class="btn btn-light m-3" [routerLink]="['/adds']">
-              Pregledaj oglase
-            </button>
-            <button class="btn btn-light m-3" [routerLink]="['/ownadds']">
-              Pregledaj svoje oglase
-            </button>
-            <ng-container *ngIf="activeUser.type === 'admin'">
-              <button class="btn btn-light m-3" (click)="createUser()">
-                Admin panel
-              </button>
-            </ng-container>
-          </div>
-        </div>
+      <img src="../../../assets/images/logo.png" alt="" />
+    </div>
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <h1>Dobrodošao {{ activeUser.username }}</h1>
+      </div>
+    </div>
+    <div class="row buttons">
+      <div class="col justify-content-around d-flex mt-4 card">
+        <button class="btn btn-light m-3" [routerLink]="['/add']">
+          Dodaj novi oglas
+        </button>
+        <button class="btn btn-light m-3" [routerLink]="['/adds']">
+          Pregledaj oglase
+        </button>
+        <button class="btn btn-light m-3" [routerLink]="['/ownadds']">
+          Pregledaj svoje oglase
+        </button>
+        <ng-container *ngIf="activeUser.type === 'admin'">
+          <button class="btn btn-light m-3" (click)="createUser()">
+            Admin panel
+          </button>
+        </ng-container>
       </div>
     </div>
   </div>

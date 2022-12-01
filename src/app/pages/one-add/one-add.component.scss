@@ -20,6 +20,9 @@
     }
   }
 }
+.title {
+  min-width: 40%;
+}
 @media screen and (max-width: 420px) {
   .imgWrapper {
     flex-wrap: wrap;

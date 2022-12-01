@@ -1,9 +1,10 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from './../../services/user.service';
 import { ItemService } from './../../services/item.service';
 import { Item } from './../../models/item';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
 import {
   DataUrl,
@@ -11,12 +12,14 @@ import {
   NgxImageCompressService,
   UploadResponse,
 } from 'ngx-image-compress';
+
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit {
+  @Input() data: any
 
 
 
@@ -33,10 +36,14 @@ export class AddComponent implements OnInit {
     file3: new FormControl("")
 
   })
-  constructor(private itemService: ItemService, private router: Router, private userService: UserService, private imageCompress: NgxImageCompressService) { }
-
+  constructor(private itemService: ItemService, private router: Router, private userService: UserService, private imageCompress: NgxImageCompressService, private modalService: NgbModal) { }
+  currentUrl: string = ""
   ngOnInit(): void {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
+    if (this.data) {
+      this.forma.patchValue(this.data)
+    }
+    this.currentUrl = this.router.url
   }
   fileChanged(item: any, index: number) {
     this.files[index] = item.target.files[0]
@@ -44,7 +51,6 @@ export class AddComponent implements OnInit {
   async uploadAndCompress(index: number) {
     const { image, orientation, fileName } = await this.imageCompress
       .uploadFile();
-    console.log(orientation)
 
     this.imageCompress
       .compressFile(image, orientation, 50, 50)
@@ -76,6 +82,21 @@ export class AddComponent implements OnInit {
 
       this.forma.reset()
       this.router.navigate(['/home'])
+    })
+  }
+  editAdd() {
+    const formData = new FormData()
+    for (let i = 0; i < this.files.length; i++) {
+      formData.append("files", this.files[i])
+    }
+    let item: Item = new Item(this.forma.value)
+    item.createdBy = this.userService.activeUser().fullname
+    item.creatorPhoneNumber = this.userService.activeUser().phoneNumber
+    this.itemService.updateAdd(formData, item, this.data).subscribe(res => {
+      if (res) alert("Oglas izmenjen")
+      this.userService.setActiveUser(new User(res))
+      this.modalService.dismissAll()
+
     })
   }
 }

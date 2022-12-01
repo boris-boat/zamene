@@ -28,6 +28,7 @@ export class AddslistComponent implements OnInit {
     this.userService.getAllUsers().subscribe(data => {
 
       let temp = data.map(user => user.items)
+      console.log(temp)
       this.setAdds(temp.flat())
     })
 

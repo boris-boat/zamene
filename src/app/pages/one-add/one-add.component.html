@@ -16,9 +16,9 @@
             class="card d-flex align-items-center justify-content-center"
             id="singleItem"
           >
-            <div class="row mt-5 d-flex">
+            <div class="row mt-5 d-flex title">
               <div class="col-xl-10 col-12 offset-xl-1">
-                <h4>{{ activeItem!.longDescription }}</h4>
+                <h4>{{ activeItem?.longDescription }}</h4>
               </div>
             </div>
 
@@ -27,7 +27,7 @@
             >
               <div class="row">
                 <h5 *ngIf="activeItem!.price != 0">
-                  Cena : {{ activeItem!.price }}
+                  Cena : {{ activeItem?.price }}
                 </h5>
               </div>
               <div class="row">

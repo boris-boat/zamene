@@ -3,8 +3,12 @@
     <div class="col-lg-2 text-center mt-3" *ngFor="let item of allAdds">
       <div class="card" style="height: 200px">
         <!-- user -->
+        <div class="col mt-1">
+          <b>
+            {{ item.name }}
+          </b>
+        </div>
         <div class="col">Korisnik : {{ item.createdBy }}</div>
-        <div class="col">Naziv : {{ item.name }}</div>
         <!-- <div class="col">Opis : {{ item.shortDescription }}</div> -->
         <div class="col" *ngIf="item.price != 0">Cena : {{ item.price }}</div>
         <div class="col" *ngIf="!item.gift">
@@ -21,11 +25,6 @@
             >
               Detaljnije
             </button>
-            <!-- <ng-container *ngIf="user.type === 'admin'">
-              <button class="btn btn-light m-3" (click)="deleteAdd(item)">
-                Izbrisi oglas
-              </button>
-            </ng-container> -->
           </div>
         </div>
       </div>

@@ -21,11 +21,10 @@ export class OneAddComponent implements OnInit {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.itemService.getOne(this.id).subscribe({
       next: (res) => {
+        console.log(res)
         this.activeItem = new Item(res)
-      }
+      }, error: (err) => console.log(err)
     })
   }
-  viewImg(data: any) {
-    console.log(data.img)
-  }
+
 }
