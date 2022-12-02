@@ -15,30 +15,24 @@ export class AddslistComponent implements OnInit {
 
   allAdds: Item[] = []
   allUsers: User[] = []
-  constructor(private itemService: ItemService, private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
     this.user = this.userService.activeUser()
 
   }
-  setAdds(data: Item[]) {
-    this.allAdds = data
-  }
+  // setAdds(data: Item[]) {
+  //   this.allAdds = data
+  // }
   ngOnInit(): void {
     //this.allAdds = this.addsService.getAll()
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.userService.getAllUsers().subscribe(data => {
-
-      let temp = data.map(user => user.items)
-      console.log(temp)
-      this.setAdds(temp.flat())
+      this.allUsers = data
+      console.log(this.allUsers)
+      // let temp = data.map(user => user.items)
+      // console.log(temp)
+      // this.setAdds(temp.flat())
     })
 
   }
-  // deleteAdd(data: any) {
-  //   this.itemService.delete(data._id, this.user).subscribe({
-  //     next: (res: any) => {
-  //       console.log(res)
-  //     }
-  //   })
 
-  // }
 }
