@@ -1,14 +1,14 @@
-<div class="container-fluid pt-5">
-  <div class="row">
-    <div class="row d-flex flex-row" *ngFor="let user of allUsers">
-      <div class="row" *ngIf="user.items.length">
+<div class="container-fluid mt-2 p-0">
+  <div class="row w-100 wrapper">
+    <div class="row d-flex flex-row m-0 p-3" *ngFor="let user of allUsers">
+      <div class="row w-100" *ngIf="user.items.length">
         <h3>
           {{ user.fullname }}
         </h3>
       </div>
       <div
         *ngIf="user.items.length"
-        class="card d-flex flex-row p-2 overflow-auto spisakOglasa"
+        class="card d-flex flex-row p-2 overflow-auto spisakOglasa w-100"
       >
         <div class="col-lg-2 text-center m-2" *ngFor="let item of user.items">
           <div class="card" style="height: 200px">

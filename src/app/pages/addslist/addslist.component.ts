@@ -27,7 +27,6 @@ export class AddslistComponent implements OnInit {
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.userService.getAllUsers().subscribe(data => {
       this.allUsers = data
-      console.log(this.allUsers)
       // let temp = data.map(user => user.items)
       // console.log(temp)
       // this.setAdds(temp.flat())
