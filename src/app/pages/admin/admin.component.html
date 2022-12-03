@@ -1,8 +1,8 @@
 <div
-  class="row d-flex justify-content-center align-content-center"
+  class="row d-flex justify-content-center align-content-center wholePage"
   style="height: 90vh"
 >
-  <div class="col-3 card">
+  <div class="col-3 card mainSection">
     <form
       [formGroup]="forma"
       class="d-flex flex-column gap-3 justify-content-center align-items-center text-center mt-5"
@@ -24,8 +24,12 @@
       </div>
     </form>
   </div>
-  <div class="col-3 card d-flex align-items-center">
-    <div class="row mt-2" style="width: 90%" *ngFor="let item of allItems">
+  <div class="col-3 card d-flex align-items-center mainSection">
+    <div
+      class="row mt-2 smallSection"
+      style="width: 90%"
+      *ngFor="let item of allItems"
+    >
       <div class="card d-flex flex-row p-1">
         <div class="col-10 d-flex align-items-center">
           <p>{{ item.item.name }} od {{ item.user.username }}</p>
@@ -38,8 +42,12 @@
       </div>
     </div>
   </div>
-  <div class="col-3 card d-flex align-items-center">
-    <div class="row mt-2" style="width: 90%" *ngFor="let user of allUsers">
+  <div class="col-3 card d-flex align-items-center mainSection">
+    <div
+      class="row mt-2 smallSection"
+      style="width: 90%"
+      *ngFor="let user of allUsers"
+    >
       <div class="card d-flex flex-row p-1">
         <div class="col-10 d-flex align-items-center eachUser">
           <p (click)="openUserModal(user)">{{ user.fullname }}</p>

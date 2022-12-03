@@ -4,11 +4,28 @@
 input {
   width: 70%;
 }
+.mainSection {
+  margin: 15px;
+}
+
 p {
   margin: 0 !important;
 }
 .eachUser {
   p {
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 420px) {
+  .wholePage {
+    flex-direction: column !important;
+    height: unset !important;
+    .mainSection {
+      width: 90% !important;
+      padding: 0;
+    }
+  }
+  .smallSection {
+    width: 100% !important;
   }
 }
