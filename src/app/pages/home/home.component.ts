@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { User } from './../../models/user';
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
@@ -12,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   users: User[] = []
   activeUser: User = new User()
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router, private http: HttpClient) {
 
   }
   ngOnInit(): void {

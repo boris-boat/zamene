@@ -17,7 +17,11 @@
       <input type="text" formControlName="phoneNumber" />
       <div class="row mb-5">
         <div class="col d-flex justify-content-center align-content-center">
-          <button class="btn btn-primary" (click)="addUser()">
+          <button
+            class="btn btn-primary"
+            [disabled]="!forma.valid"
+            (click)="addUser()"
+          >
             Dodaj korisnika
           </button>
         </div>

@@ -2,6 +2,9 @@
   background-color: black;
   width: 100%;
 }
+span {
+  color: white;
+}
 @media screen and (max-width: 420px) {
   .bigButtons {
     display: none !important;

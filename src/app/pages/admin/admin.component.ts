@@ -4,7 +4,7 @@ import { User } from './../../models/user';
 import { ItemService } from './../../services/item.service';
 import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -15,10 +15,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AdminComponent implements OnInit {
   forma: FormGroup = new FormGroup({
-    username: new FormControl(""),
-    password: new FormControl(""),
-    fullname: new FormControl(""),
-    phoneNumber: new FormControl(""),
+    username: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
+    fullname: new FormControl("", Validators.required),
+    phoneNumber: new FormControl("", Validators.required),
   })
   constructor(private userService: UserService, private router: Router, private itemService: ItemService, private modalService: NgbModal) { }
   allUsers: User[] = []

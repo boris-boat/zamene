@@ -14,3 +14,8 @@ img {
 .img-wrapper {
   width: 20%;
 }
+@media screen and (max-width: 420px) {
+  .loginWrapper {
+    width: 95%;
+  }
+}

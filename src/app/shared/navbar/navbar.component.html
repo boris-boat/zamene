@@ -1,7 +1,7 @@
 <ng-container *ngIf="isLoggedIn()">
   <div class="container-fluid p-3 m-0" id="navbar">
     <div class="row">
-      <div class="col-4 d-flex justify-content-around m-0 bigButtons">
+      <div class="col-6 d-flex justify-content-around m-0 bigButtons">
         <button class="btn btn-primary" [routerLink]="['/home']">
           Glavna stranica
         </button>
@@ -14,13 +14,17 @@
         <button class="btn btn-primary" [routerLink]="['/add']">
           Dodaj oglas
         </button>
+
+        <span class="p-2">Euro danas : {{ rate.toFixed(2) }}</span>
       </div>
-      <div class="col-4 smallButtons">
+      <div class="col smallButtons">
         <button class="btn btn-primary" [routerLink]="['/home']">
           Glavna stranica
         </button>
+        <span class="p-2 mt-2">EUR : {{ rate.toFixed(2) }}</span>
       </div>
-      <div class="col-8 d-flex flex-row-reverse">
+
+      <div class="col-lg-6 col-2 d-flex flex-row-reverse">
         <button
           class="btn btn-primary"
           (click)="logout()"

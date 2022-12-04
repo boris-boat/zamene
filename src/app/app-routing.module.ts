@@ -9,8 +9,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [{ path: "home", component: HomeComponent },
-{ path: "adds", component: AddslistComponent }, { path: "add", component: AddComponent }, { path: "ownadds", component: OwnaddsComponent },
-{ path: "details/:id", component: OneAddComponent }, { path: "admin", component: AdminComponent }, { path: "", component: LoginComponent }, { path: '', redirectTo: 'home', pathMatch: 'full' }];
+{ path: "adds", component: AddslistComponent },
+{ path: "add", component: AddComponent },
+{ path: "ownadds", component: OwnaddsComponent },
+{ path: "details/:id", component: OneAddComponent },
+{ path: "admin", component: AdminComponent },
+{ path: "", component: LoginComponent },
+{ path: '', redirectTo: 'home', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
