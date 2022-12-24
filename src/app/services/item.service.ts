@@ -1,14 +1,14 @@
+import { GET_ONE_AD, DELETE_AD, EDIT_ITEM, CREATE_ITEM } from './../shared/constants';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from './user.service';
 import { Injectable } from '@angular/core';
 import { Item } from '../models/item';
 import { User } from '../models/user';
-import { Form } from '@angular/forms';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
-  url: string = "https://podsetnik.herokuapp.com/"
 
 
   constructor(private userService: UserService, private http: HttpClient) {
@@ -17,7 +17,7 @@ export class ItemService {
 
 
   getOne(id: number) {
-    return this.http.get(this.url + "zamene/getone/" + id)
+    return this.http.get<Item>(GET_ONE_AD + id)
 
   }
   addAdd(fd: FormData, item: any) {
@@ -31,12 +31,12 @@ export class ItemService {
       formData.append(key, newItem[key])
     }
 
-    return this.http.post(this.url + "zamene/createitem", fd)
+    return this.http.post<Item>(CREATE_ITEM, fd)
   }
-  delete(id: any, user: User) {
-    let data = { id: id, user: user }
+  delete(id: string, user: User) {
+    let data = { id, user }
 
-    return this.http.post(this.url + "zamene/deleteAdd", data)
+    return this.http.post<User>(DELETE_AD, data)
   }
   updateAdd(formData: FormData, item: any, oldItem: any) {
 
@@ -49,6 +49,6 @@ export class ItemService {
       formData.append(key, newItem[key])
     }
     formData.append("oldItemId", oldItem._id)
-    return this.http.post(this.url + "zamene/editItem", formData)
+    return this.http.post(EDIT_ITEM, formData)
   }
 }

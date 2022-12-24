@@ -1,3 +1,4 @@
+import { GET_ALL_USERS, CREATE_USER, DELETE_USER } from './../shared/constants';
 import { Router } from '@angular/router';
 import { User } from './../models/user';
 import { Injectable } from '@angular/core';
@@ -6,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  url: string = "https://podsetnik.herokuapp.com/"
+
   users: User[] = []
   loggedInUser: User = new User()
   isLoggedIn: boolean = false
   //umesto isloggedin  staviti user objekt
   constructor(private router: Router, private http: HttpClient) {
-    this.http.get<User[]>(this.url + "zamene/getallusers").subscribe(item => this.users = item.map(data => data))
+    this.getAllUsers().subscribe(item => this.users = item.map(data => data))
   }
   getAllUsers() {
-    return this.http.get<User[]>(this.url + "zamene/getallusers")
+    return this.http.get<User[]>(GET_ALL_USERS)
   }
   setActiveUser(user: User) {
     this.loggedInUser = user
@@ -27,8 +28,7 @@ export class UserService {
     return this.loggedInUser
   }
   login(credentials: any) {
-    let username = credentials.username
-    let password = credentials.password
+    let { username, password } = credentials
     let res = this.users.find(item => item.username === username)
     if (res && res.password == password) {
       this.loggedInUser = res
@@ -45,10 +45,10 @@ export class UserService {
     this.router.navigate(['/'])
   }
   createUser(data: User) {
-    return this.http.post(this.url + "zamene/createuser", data)
+    return this.http.post(CREATE_USER, data)
   }
   deleteUser(data: string) {
     let id = { id: data }
-    return this.http.post(this.url + "zamene/deleteUser", id, { responseType: "text" })
+    return this.http.post(DELETE_USER, id, { responseType: "text" })
   }
 }

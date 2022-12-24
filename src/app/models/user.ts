@@ -1,6 +1,6 @@
 import { Item } from "./item";
 export class User {
-    id: string;
+    _id?: string
     type: string;
     username: string;
     password: string;
@@ -8,7 +8,7 @@ export class User {
     phoneNumber: string;
     items: Item[];
     constructor(obj?: any) {
-        this.id = obj && obj._id || null;
+        this._id = obj && obj._id
         this.type = obj && obj.type || "user";
         this.username = obj && obj.username || null;
         this.fullname = obj && obj.fullname || null;
