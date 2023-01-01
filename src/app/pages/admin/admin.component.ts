@@ -29,7 +29,7 @@ export class AdminComponent implements OnInit {
     this.getData()
   }
 
-  addUser() {
+  addUser(): void {
     this.userService.createUser(this.forma.value).subscribe({
       next: ((res) => {
         if (res) {
@@ -43,21 +43,21 @@ export class AdminComponent implements OnInit {
     })
 
   }
-  populateData() {
+  populateData(): void {
     for (let user of this.allUsers) {
       for (let item of user.items) {
         this.allItems.push({ user: user, item: item })
       }
     }
   }
-  getData() {
+  getData(): void {
     this.userService.getAllUsers().subscribe(res => {
       this.allUsers = res
       this.populateData()
     })
 
   }
-  deleteItem(item: any) {
+  deleteItem(item: any): void {
     if (confirm("Jeste li sigurni da zelite da izbrisete ovaj oglas?")) {
 
       let id = item.item._id
@@ -71,7 +71,7 @@ export class AdminComponent implements OnInit {
     }
 
   }
-  deleteUser(data: any) {
+  deleteUser(data: any): void {
     if (confirm("Jeste li sigurni da zelite da izbrisete ovog korisnika?"))
       this.userService.deleteUser(data._id).subscribe((res) => {
         let tmp = this.allUsers.filter((user) => user.username != data.username)

@@ -19,17 +19,12 @@ export class AddslistComponent implements OnInit {
     this.user = this.userService.activeUser()
 
   }
-  // setAdds(data: Item[]) {
-  //   this.allAdds = data
-  // }
+
   ngOnInit(): void {
-    //this.allAdds = this.addsService.getAll()
     if (!this.userService.loginCheck()) this.router.navigate(['/'])
     this.userService.getAllUsers().subscribe(data => {
       this.allUsers = data
-      // let temp = data.map(user => user.items)
-      // console.log(temp)
-      // this.setAdds(temp.flat())
+
     })
 
   }

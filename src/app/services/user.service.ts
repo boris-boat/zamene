@@ -11,7 +11,6 @@ export class UserService {
   users: User[] = []
   loggedInUser: User = new User()
   isLoggedIn: boolean = false
-  //umesto isloggedin  staviti user objekt
   constructor(private router: Router, private http: HttpClient) {
     this.getAllUsers().subscribe(item => this.users = item.map(data => data))
   }
