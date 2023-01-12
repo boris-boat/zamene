@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit {
   onLogin() {
     if (!this.userService.login(this.forma.value)) {
       this.errorMsg = "Neispravna kombinacija imena i šifre"
+      setTimeout(() => {
+        this.errorMsg = ""
+      }, 1500)
     }
   }
 }

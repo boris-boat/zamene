@@ -76,8 +76,9 @@ export class AddComponent implements OnInit {
     let item: Item = new Item(this.forma.value)
     item.createdBy = this.userService.activeUser().fullname
     item.creatorPhoneNumber = this.userService.activeUser().phoneNumber
-    this.itemService.addAdd(formData, item).subscribe(res => {
-      if (res) alert("Oglas uspesno dodat")
+    this.itemService.addAdd(formData, item).subscribe((res) => {
+
+      if (res = !{}) alert("Oglas uspesno dodat")
       this.userService.setActiveUser(new User(res))
 
       this.forma.reset()

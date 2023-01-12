@@ -31,7 +31,10 @@
           </div>
           <div class="row">
             <div class="col offset-1 mt-2">
-              <p class="text-danger">
+              <p
+                class="text-danger animate__animated animate__fadeIn"
+                *ngIf="errorMsg"
+              >
                 {{ errorMsg }}
               </p>
             </div>

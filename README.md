@@ -2,6 +2,15 @@
 
 Project implementing a closed , local marketplace.
 
+## Live demonstration
+
+https://zamene.net/
+
+Use test acc :
+
+Username : test
+Password : test
+
 ## Descrption
 
 An application for trading with a closed number of people who needs to be preapproved and added to the database by the admin of the page.
