@@ -1,8 +1,8 @@
-import { AddComponent } from './../add/add.component';
+import { AddComponent } from '../add-item/add.component';
 import { Router } from '@angular/router';
-import { ItemService } from './../../services/item.service';
-import { User } from './../../models/user';
-import { UserService } from './../../services/user.service';
+import { ItemService } from '../../services/item.service';
+import { User } from '../../models/user';
+import { UserService } from '../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 

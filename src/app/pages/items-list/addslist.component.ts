@@ -1,8 +1,8 @@
-import { User } from './../../models/user';
+import { User } from '../../models/user';
 import { Router } from '@angular/router';
-import { UserService } from './../../services/user.service';
-import { ItemService } from './../../services/item.service';
-import { Item } from './../../models/item';
+import { UserService } from '../../services/user.service';
+import { ItemService } from '../../services/item.service';
+import { Item } from '../../models/item';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

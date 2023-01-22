@@ -4,14 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AddComponent } from './pages/add/add.component';
+import { AddComponent } from './pages/add-item/add.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AddslistComponent } from './pages/addslist/addslist.component';
-import { OneAddComponent } from './pages/one-add/one-add.component';
+import { AddslistComponent } from './pages/items-list/addslist.component';
+import { OneAddComponent } from './pages/one-item/one-add.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { OwnaddsComponent } from './pages/ownadds/ownadds.component';
+import { OwnaddsComponent } from './pages/own-items/ownadds.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { SingleUserComponent } from './pages/admin/single-user/single-user.component';
 

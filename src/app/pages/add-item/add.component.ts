@@ -1,7 +1,7 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from './../../services/user.service';
-import { ItemService } from './../../services/item.service';
-import { Item } from './../../models/item';
+import { UserService } from '../../services/user.service';
+import { ItemService } from '../../services/item.service';
+import { Item } from '../../models/item';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import {
 } from 'ngx-image-compress';
 
 @Component({
-  selector: 'app-add',
+  selector: 'app-add-item',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss']
 })
